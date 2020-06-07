@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-department-heading" jhiTranslate="thesesManagerApp.department.home.createOrEditLabel">Create or edit a Department</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thesesManagerApp.department.departmentName" for="field_departmentName">Department Name</label>
+                    <input type="text" class="form-control" name="departmentName" id="field_departmentName"
+                           formControlName="departmentName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thesesManagerApp.department.hodName" for="field_hodName">Hod Name</label>
+                    <input type="text" class="form-control" name="hodName" id="field_hodName"
+                           formControlName="hodName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thesesManagerApp.department.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="ENABLED">{{'thesesManagerApp.Status.ENABLED' | translate}}</option>
+                        <option value="DISABLED">{{'thesesManagerApp.Status.DISABLED' | translate}}</option>
+                        <option value="ARCHIVED">{{'thesesManagerApp.Status.ARCHIVED' | translate}}</option>
+                        <option value="DRAFT">{{'thesesManagerApp.Status.DRAFT' | translate}}</option>
+                        <option value="DELETED">{{'thesesManagerApp.Status.DELETED' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="thesesManagerApp.department.faculty" for="field_faculty">Faculty</label>
+                    <select class="form-control" id="field_faculty" name="faculty" formControlName="facultyId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="facultyOption.id" *ngFor="let facultyOption of faculties; trackBy: trackById">{{facultyOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

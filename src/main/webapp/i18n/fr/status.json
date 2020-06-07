@@ -1,0 +1,12 @@
+{
+  "thesesManagerApp": {
+    "Status": {
+      "null": "",
+      "ENABLED": "ENABLED",
+      "DISABLED": "DISABLED",
+      "ARCHIVED": "ARCHIVED",
+      "DRAFT": "DRAFT",
+      "DELETED": "DELETED"
+    }
+  }
+}

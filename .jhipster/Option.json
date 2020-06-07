@@ -1,0 +1,41 @@
+{
+    "name": "Option",
+    "fields": [
+        {
+            "fieldName": "optionName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "ENABLED,DISABLED,ARCHIVED,DRAFT,DELETED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "document",
+            "otherEntityRelationshipName": "option",
+            "relationshipName": "document"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "department",
+            "otherEntityRelationshipName": "option",
+            "relationshipName": "department",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200607082126",
+    "entityTableName": "option",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "thesesManager"
+    ]
+}

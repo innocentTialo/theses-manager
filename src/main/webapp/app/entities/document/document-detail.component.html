@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="document">
+            <h2><span jhiTranslate="thesesManagerApp.document.detail.title">Document</span> {{document.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="thesesManagerApp.document.title">Title</span></dt>
+                <dd>
+                    <span>{{document.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="thesesManagerApp.document.defenseDate">Defense Date</span></dt>
+                <dd>
+                    <span>{{document.defenseDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="thesesManagerApp.document.authorName">Author Name</span></dt>
+                <dd>
+                    <span>{{document.authorName}}</span>
+                </dd>
+                <dt><span jhiTranslate="thesesManagerApp.document.supervisorName">Supervisor Name</span></dt>
+                <dd>
+                    <span>{{document.supervisorName}}</span>
+                </dd>
+                <dt><span jhiTranslate="thesesManagerApp.document.file">File</span></dt>
+                <dd>
+                    <div *ngIf="document.file">
+                        <a (click)="openFile(document.fileContentType!, document.file)" jhiTranslate="entity.action.open">open</a>
+                        {{document.fileContentType}}, {{byteSize(document.file)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="thesesManagerApp.document.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'thesesManagerApp.Status.' + document.status}}">{{document.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="thesesManagerApp.document.option">Option</span></dt>
+                <dd>
+                    <div *ngIf="document.optionId">
+                        <a [routerLink]="['/option', document.optionId, 'view']">{{document.optionId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/document', document.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

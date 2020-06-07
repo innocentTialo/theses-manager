@@ -1,0 +1,46 @@
+{
+    "name": "Department",
+    "fields": [
+        {
+            "fieldName": "departmentName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hodName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "ENABLED,DISABLED,ARCHIVED,DRAFT,DELETED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "option",
+            "otherEntityRelationshipName": "department",
+            "relationshipName": "option"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "faculty",
+            "otherEntityRelationshipName": "department",
+            "relationshipName": "faculty",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200607082125",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "department",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "thesesManager"
+    ]
+}

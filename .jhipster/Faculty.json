@@ -1,0 +1,38 @@
+{
+    "name": "Faculty",
+    "fields": [
+        {
+            "fieldName": "facultyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "directorName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "ENABLED,DISABLED,ARCHIVED,DRAFT,DELETED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "department",
+            "otherEntityRelationshipName": "faculty",
+            "relationshipName": "department"
+        }
+    ],
+    "changelogDate": "20200607082124",
+    "entityTableName": "faculty",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "thesesManager"
+    ]
+}

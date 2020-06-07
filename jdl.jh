@@ -1,0 +1,55 @@
+application {
+  config {
+    baseName thesesManager,
+    applicationType monolith,
+    packageName org.dof.thesesmanager,
+    authenticationType session,
+    prodDatabaseType postgresql,
+    buildTool maven,
+    enableSwaggerCodegen true
+  }
+  entities Faculty, Department, Option, Document
+}
+entity Faculty {
+  id Long
+	facultyName String
+    directorName String
+    status Status
+}
+enum Status {
+  ENABLED, DISABLED, ARCHIVED, DRAFT, DELETED
+}
+// an ignored comment
+/** not an ignored comment */
+entity Department {
+  id Long
+	departmentName String
+	hodName String
+	status Status
+}
+entity Option {
+  id Long
+	optionName String
+  status Status
+}
+entity Document {
+  id Long
+	title String
+	defenseDate LocalDate
+  authorName String
+  supervisorName String
+  file Blob
+  status Status
+}
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+  Faculty to Department{faculty} , Department to Option{department} , Option to Document{option}
+}
+// Set pagination options
+paginate Document, Faculty, Department, Option with pagination
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+// angularSuffix * with mySuffix

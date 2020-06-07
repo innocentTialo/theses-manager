@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="faculty">
+            <h2><span jhiTranslate="thesesManagerApp.faculty.detail.title">Faculty</span> {{faculty.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="thesesManagerApp.faculty.facultyName">Faculty Name</span></dt>
+                <dd>
+                    <span>{{faculty.facultyName}}</span>
+                </dd>
+                <dt><span jhiTranslate="thesesManagerApp.faculty.directorName">Director Name</span></dt>
+                <dd>
+                    <span>{{faculty.directorName}}</span>
+                </dd>
+                <dt><span jhiTranslate="thesesManagerApp.faculty.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'thesesManagerApp.Status.' + faculty.status}}">{{faculty.status}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/faculty', faculty.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
