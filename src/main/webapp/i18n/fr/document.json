@@ -16,12 +16,12 @@
       "detail": {
         "title": "Document"
       },
-      "title": "Title",
-      "defenseDate": "Defense Date",
-      "authorName": "Author Name",
-      "supervisorName": "Supervisor Name",
-      "file": "File",
-      "status": "Status",
+      "title": "Titre",
+      "defenseDate": "Date de soutenance",
+      "authorName": "Nom de l'auteur",
+      "supervisorName": "Nom du superviseur/encadreur",
+      "file": "Fichier",
+      "status": "Statut",
       "option": "Option"
     }
   }

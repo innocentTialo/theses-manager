@@ -3,23 +3,23 @@
     "option": {
       "home": {
         "title": "Options",
-        "createLabel": "Créer un nouveau Option",
-        "createOrEditLabel": "Créer ou éditer un Option",
-        "notFound": "Aucun Option trouvé"
+        "createLabel": "Créer une nouvelle Option",
+        "createOrEditLabel": "Créer ou éditer une Option",
+        "notFound": "Aucune Option trouvée"
       },
-      "created": "Un nouveau Option a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Option avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Option avec l'identifiant {{ param }} a été supprimé",
+      "created": "Une nouvelle Option a été créée avec l'identifiant {{ param }}",
+      "updated": "L'Option avec l'identifiant {{ param }} a été mise à jour",
+      "deleted": "L'Option avec l'identifiant {{ param }} a été supprimée",
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer le Option {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer l'Option {{ id }} ?"
       },
       "detail": {
         "title": "Option"
       },
-      "optionName": "Option Name",
-      "status": "Status",
+      "optionName": "Nom de l'option",
+      "status": "Statut",
       "document": "Document",
-      "department": "Department"
+      "department": "Département"
     }
   }
 }

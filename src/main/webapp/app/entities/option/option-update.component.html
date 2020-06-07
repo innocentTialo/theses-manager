@@ -29,7 +29,7 @@
                     <label class="form-control-label" jhiTranslate="thesesManagerApp.option.department" for="field_department">Department</label>
                     <select class="form-control" id="field_department" name="department" formControlName="departmentId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="departmentOption.id" *ngFor="let departmentOption of departments; trackBy: trackById">{{departmentOption.id}}</option>
+                        <option [ngValue]="departmentOption.id" *ngFor="let departmentOption of departments; trackBy: trackById">{{departmentOption.departmentName}}</option>
                     </select>
                 </div>
             </div>

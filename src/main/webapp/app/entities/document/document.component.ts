@@ -78,6 +78,10 @@ export class DocumentComponent implements OnInit, OnDestroy {
     return this.dataUtils.openFile(contentType, base64String);
   }
 
+  downloadFile(fileContentType: string, base64String: string, fileName: string): void {
+    this.dataUtils.downloadFile(fileContentType, base64String, fileName);
+  }
+
   registerChangeInDocuments(): void {
     this.eventSubscriber = this.eventManager.subscribe('documentListModification', () => this.loadPage());
   }

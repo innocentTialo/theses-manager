@@ -5,7 +5,7 @@
         "title": "Faculties",
         "createLabel": "Create a new Faculty",
         "createOrEditLabel": "Create or edit a Faculty",
-        "notFound": "No Faculties found"
+        "notFound": "No Faculty found"
       },
       "created": "A new Faculty is created with identifier {{ param }}",
       "updated": "A Faculty is updated with identifier {{ param }}",
@@ -17,7 +17,7 @@
         "title": "Faculty"
       },
       "facultyName": "Faculty Name",
-      "directorName": "Director Name",
+      "directorName": "Director/Dean Name",
       "status": "Status",
       "department": "Department"
     }

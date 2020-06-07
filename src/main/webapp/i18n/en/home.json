@@ -1,9 +1,9 @@
 {
   "home": {
-    "title": "Welcome, Java Hipster!",
-    "subtitle": "This is your homepage",
+    "title": "Welcome to Theses Manager!",
+    "subtitle": "Your online library of already supported memories",
     "logged": {
-      "message": "You are logged in as user \"{{username}}\"."
+      "message": "You are logged in as  <span class=\"font-weight-bold\">{{username}}</span>."
     },
     "question": "If you have any question on JHipster:",
     "link": {

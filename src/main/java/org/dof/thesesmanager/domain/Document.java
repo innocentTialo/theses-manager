@@ -195,4 +195,8 @@ public class Document implements Serializable {
             ", status='" + getStatus() + "'" +
             "}";
     }
+
+    public boolean isEnabled() {
+        return status == Status.ENABLED;
+    }
 }

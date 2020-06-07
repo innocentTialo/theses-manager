@@ -1,5 +1,7 @@
 package org.dof.thesesmanager.service.impl;
 
+import org.dof.thesesmanager.domain.enumeration.Status;
+import org.dof.thesesmanager.security.SecurityUtils;
 import org.dof.thesesmanager.service.DocumentService;
 import org.dof.thesesmanager.domain.Document;
 import org.dof.thesesmanager.repository.DocumentRepository;
@@ -9,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,6 +46,9 @@ public class DocumentServiceImpl implements DocumentService {
     public DocumentDTO save(DocumentDTO documentDTO) {
         log.debug("Request to save Document : {}", documentDTO);
         Document document = documentMapper.toEntity(documentDTO);
+        if (!SecurityUtils.isCurrentUserInRole("ROLE_ADMIN")){
+            document.setStatus(Status.DRAFT);
+        }
         document = documentRepository.save(document);
         return documentMapper.toDto(document);
     }
@@ -57,8 +63,13 @@ public class DocumentServiceImpl implements DocumentService {
     @Transactional(readOnly = true)
     public Page<DocumentDTO> findAll(Pageable pageable) {
         log.debug("Request to get all Documents");
-        return documentRepository.findAll(pageable)
-            .map(documentMapper::toDto);
+        if (SecurityUtils.isCurrentUserInRole("ROLE_ADMIN")){
+            return documentRepository.findAll(pageable)
+                .map(documentMapper::toDto);
+        } else {
+            return documentRepository.findByStatus(pageable, Status.ENABLED)
+                .map(documentMapper::toDto);
+        }
     }
 
 

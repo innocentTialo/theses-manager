@@ -2,24 +2,24 @@
   "thesesManagerApp": {
     "faculty": {
       "home": {
-        "title": "Faculties",
-        "createLabel": "Créer un nouveau Faculty",
-        "createOrEditLabel": "Créer ou éditer un Faculty",
-        "notFound": "Aucun Faculty trouvé"
+        "title": "Facultés",
+        "createLabel": "Créer une nouvelle faculté",
+        "createOrEditLabel": "Créer ou éditer une faculté",
+        "notFound": "Aucune faculté trouvé"
       },
-      "created": "Un nouveau Faculty a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Faculty avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Faculty avec l'identifiant {{ param }} a été supprimé",
+      "created": "Un nouveau faculté a été créé avec l'identifiant {{ param }}",
+      "updated": "La faculté avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "La faculté avec l'identifiant {{ param }} a été supprimé",
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer le Faculty {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer la faculté {{ id }} ?"
       },
       "detail": {
-        "title": "Faculty"
+        "title": "Faculté"
       },
-      "facultyName": "Faculty Name",
-      "directorName": "Director Name",
-      "status": "Status",
-      "department": "Department"
+      "facultyName": "Nom de la faculté",
+      "directorName": "Nom du Directeur/Doyen",
+      "status": "Statut",
+      "department": "Département"
     }
   }
 }

@@ -11,6 +11,7 @@
         "department": "Department",
         "option": "Option",
         "document": "Document",
+        "loadDocuments": "Display the list of available documents",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -101,6 +102,7 @@
       "delete": "Delete",
       "edit": "Edit",
       "open": "Open",
+      "download": "Download",
       "save": "Save",
       "view": "View"
     },

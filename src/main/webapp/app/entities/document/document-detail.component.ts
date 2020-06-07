@@ -27,6 +27,10 @@ export class DocumentDetailComponent implements OnInit {
     this.dataUtils.openFile(contentType, base64String);
   }
 
+  downloadFile(fileContentType: string, base64String: string, fileName: string): void {
+    this.dataUtils.downloadFile(fileContentType, base64String, fileName);
+  }
+
   previousState(): void {
     window.history.back();
   }

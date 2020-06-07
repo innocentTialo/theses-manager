@@ -132,6 +132,7 @@ public class UserResource {
             throw new LoginAlreadyUsedException();
         }
         Optional<UserDTO> updatedUser = userService.updateUser(userDTO);
+        mailService.sendCreationEmail(existingUser.get());
 
         return ResponseUtil.wrapOrNotFound(updatedUser,
             HeaderUtil.createAlert(applicationName, "userManagement.updated", userDTO.getLogin()));
